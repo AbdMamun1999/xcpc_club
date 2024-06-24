@@ -23,12 +23,13 @@ int main()
     }
     else
     {
-        int x = -1;
+        int x = 0;
         for (int i = 0; i < n; i++)
         {
-            if (a[i] != b[i])
+            if (a[i] == b[i])
+                x++;
+            else if (a[i] != b[i])
             {
-                x = i;
                 break;
             }
         }
@@ -36,7 +37,7 @@ int main()
         if (x == -1)
             cout << n + m << '\n';
         else
-            cout << (n - x) + (m - x) << endl;
+            cout << (n + m) - 2 * x << endl;
     }
 
     return 0;
